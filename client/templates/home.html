@@ -1,0 +1,8 @@
+<template name="home">
+    {{#if currentUser}}
+        {{> createSurvey}}
+        {{> userSurveys}}
+    {{else}}
+        <div class="block">Please sign in or create an account for creating surveys.</div>
+    {{/if}}
+</template>

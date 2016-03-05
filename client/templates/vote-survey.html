@@ -1,0 +1,20 @@
+<template name="voteSurvey">
+    <div class="block">
+        {{#if isVoted}}
+            Thank you for participating!
+        {{else}}
+            <h4>Please vote:</h4>
+            {{#with getSurvey}}
+                <form class="vote-for-survey">
+                    <p><h2>{{title}}</h2></p>
+                    <ul>
+                        {{#each surveyOption in getSurveyOptions}}
+                            <li><input type="radio" name="option" value="{{surveyOption}}">{{surveyOption}}</li>
+                        {{/each}}
+                    </ul>
+                    <input type="submit" value="Vote" class="medium-button">
+                </form>
+            {{/with}}
+        {{/if}}
+    </div>
+</template>

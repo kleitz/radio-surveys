@@ -1,0 +1,9 @@
+<template name="survey">
+    <li>
+        {{title}}
+        <button class="delete small-button">&times;</button>
+        <button class="view-results small-button">view results</button>
+        <button class="view-survey small-button" value="/{{getSurveyLink}}">view survey</button>
+        <button class="copy-link small-button" value="{{getSurveyLink}}">copy link</button>
+    </li>
+</template>

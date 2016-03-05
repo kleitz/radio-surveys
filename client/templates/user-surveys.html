@@ -1,0 +1,14 @@
+<template name="userSurveys">
+    <div class="block">
+        <ul>
+            {{#if haveSurveys}}
+                <h2>Your surveys</h2>
+                {{#each surveys}}
+                    {{> survey}}
+                {{/each}}
+            {{else}}
+                <h2>You have no surveys yet</h2>
+            {{/if}}
+        </ul>
+    </div>
+</template>

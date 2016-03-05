@@ -1,0 +1,11 @@
+<template name="results">
+    <div class="block">
+        <h4>Results for your survey.</h4>
+        <br/>
+        {{#with getSurvey}}
+            <h2>{{title}}</h2>
+            <br/>
+        {{/with}}
+        <div class="chart-wrapper"><canvas id="myChart" width="400" height="250"></canvas></div>
+    </div>
+</template>

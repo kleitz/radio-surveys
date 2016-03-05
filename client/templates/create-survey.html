@@ -1,0 +1,36 @@
+<template name="createSurvey">
+    <div class="block">
+        <h2>Create a new survey</h2>
+        {{#if getSurveyTitle}}
+            <p>
+                <h3>{{getSurveyTitle}}</h3>
+            </p>
+            {{#if surveyOptions}}
+                <ul>
+                    {{#each surveyOption in surveyOptions}}
+                        <li>{{surveyOption[0]}}
+                            <button class="delete-option small-button" value="{{surveyOption[0]}}">&times;</button>
+                        </li>
+                    {{/each}}
+                </ul>
+            {{/if}}
+            <div class="wrapper">
+                <form class="new-survey-option">
+                    <input type="text" name="text" placeholder="Type to enter new survey option"/>
+                </form>
+            </div>
+            <button class="survey-save small-button">
+                save
+            </button>
+            <button class="survey-cancel small-button">
+                cancel
+            </button>
+        {{else}}
+            <div class="wrapper">
+                <form class="new-survey">
+                    <input type="text" name="title" placeholder="Type to enter title for new survey"/>
+                </form>
+            </div>
+        {{/if}}
+    </div>
+</template>

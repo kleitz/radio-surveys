@@ -1,0 +1,120 @@
+/* CSS declarations go here */
+
+html {
+    background-color: rgb(230,230,230);
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #fff;
+    max-width: 800px;
+    font-family: sans-serif;
+    font-size: 16px;
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    min-height: 720px;
+}
+
+header {
+    padding: 3px 40px;
+    border-bottom: 1px solid rgb(245,245,245);
+}
+
+header h1 {
+    font-size: 16px;
+    font-weight: 500;
+    color: #09596B;
+    float: left;
+}
+
+header .right {
+    float: right;
+    margin: 10px 140px 0px 0px;
+}
+
+.title:hover {
+    cursor: pointer;
+    color: #0F99B8;
+}
+
+.block {
+    padding: 5px 40px;
+    border-bottom: 1px solid rgb(245,245,245);
+    clear: both;
+}
+
+.block input[type=text] {
+    width: 100%;
+    /*padding: 5px 10px;*/
+    font-size: 16px;
+}
+
+.block input[type=radio] {
+    margin: 0px 10px 0px 0px;
+    font-size: 16px;
+}
+
+.block h2 {
+    font-size: 24px;
+    font-weight: 500;
+    margin: 10px 0px;
+}
+
+.block h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 5px 0px;
+}
+
+.block h4 {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.block ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.block li {
+    border-top: 1px solid rgb(245,245,245);
+    padding: 5px 0px;
+}
+
+.wrapper {
+    max-width: 720px;
+}
+
+
+.medium-button {
+    background-color: #35873C;
+    border:1px solid #215426;
+    border-radius: 5px;
+    color: white;
+    padding: 8px 16px;
+    margin: 10px 0px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.medium-button:hover {
+    background-color: #40A349;
+}
+
+.small-button {
+    border: 1px solid rgb(150,150,150);
+    border-radius: 5px;
+    background-color: rgb(200,200,200);
+    cursor: pointer;
+}
+
+.small-button:hover {
+    background-color: rgb(230,230,230);
+}
