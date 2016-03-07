@@ -1,11 +1,12 @@
+var dict = new ReactiveDict('surveyDict');
 Template.createSurvey.events({
     "submit .new-survey": function(event) {
         event.preventDefault();
 
         var title = event.target.title.value;
 
-        Session.set("title", event.target.title.value);
-        Session.set("surveyProcessing", true);
+        dict.set("title", event.target.title.value);
+        dict.set("surveyProcessing", true);
 
         event.target.title.value = "";
     },
@@ -16,35 +17,35 @@ Template.createSurvey.events({
         if (text == "") {
             alert("Please name the option");
             return false;
-        } else if (Session.get("surveyOptions") && Session.get("surveyOptions").indexOf(text) != -1) {
+        } else if (dict.get("surveyOptions") && dict.get("surveyOptions").indexOf(text) != -1) {
             alert("Option is already existent");
             return false;
         }
 
         var options = new Array();
 
-        if (Session.get("surveyOptions")) options = options.concat(Session.get("surveyOptions"));
+        if (dict.get("surveyOptions")) options = options.concat(dict.get("surveyOptions"));
         options = options.concat(text);
 
-        Session.set("surveyOptions", options);
+        dict.set("surveyOptions", options);
         event.target.text.value = "";
     },
     "click .survey-save": function() {
-        if (Session.get("surveyOptions").length < 2) {
+        if (dict.get("surveyOptions").length < 2) {
             alert("Please add at least two options");
             return false;
         }
-        Meteor.call("addSurvey", Session.get("title"), Session.get("surveyOptions"));
-        Session.set("title", undefined);
-        Session.set("surveyOptions", undefined);
+        Meteor.call("addSurvey", dict.get("title"), dict.get("surveyOptions"));
+        dict.set("title", undefined);
+        dict.set("surveyOptions", undefined);
     },
     "click .survey-cancel": function() {
-        Session.set("title", undefined);
-        Session.set("surveyOptions", undefined);
+        dict.set("title", undefined);
+        dict.set("surveyOptions", undefined);
     },
     "click .delete-option": function(event) {
-        var options = Session.get("surveyOptions").filter(check);
-        Session.set("surveyOptions", options);
+        var options = dict.get("surveyOptions").filter(check);
+        dict.set("surveyOptions", options);
 
         function check(text) {
             return text != event.target.value;
@@ -54,9 +55,9 @@ Template.createSurvey.events({
 
 Template.createSurvey.helpers({
     getSurveyTitle: function() {
-        return Session.get("title");
+        return dict.get("title");
     },
     surveyOptions: function() {
-        return Session.get("surveyOptions");
+        return dict.get("surveyOptions");
     }
 });
