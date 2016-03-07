@@ -12,9 +12,7 @@ Template.survey.events({
         Router.go(event.target.value);
     },
     "click .copy-link": function(event) {
-        //Metero.absoluteUrl() returns 0.0.0.0.:8000 on c9.io. Need to find out how to get/set the server ip/adress.
-        // Hardcoded the adress on c9. Okay for testing purposes.
-        window.prompt("Copy to clipboard: Ctrl+C or cmd+C, Enter", Meteor.absoluteUrl()+event.target.value);
+        window.prompt("Copy to clipboard: Ctrl+C or cmd+C, Enter", Router.current().originalUrl + event.target.value);
     }
 });
 
