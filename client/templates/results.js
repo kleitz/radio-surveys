@@ -12,7 +12,7 @@ Template.results.helpers({
 Template.results.rendered = function() {
     if (!this._rendered) {
         this._rendered = true;
-        var options = Surveys.findOne(Session.get("resultsId")).options;
+        var options = Surveys.findOne(Router.current().params['_surveyId']).options;
         var optionKeys = new Array();
         var optionValues = new Array();
         for (var key in options) {
